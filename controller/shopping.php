@@ -10,6 +10,10 @@ function updateTotal($products, $tax) {
 		}
 	}
 
+	if ($total == $tax) {
+		$total = 0;
+	}
+	
 	$_SESSION['total'] = $total;
 }
 
@@ -24,6 +28,10 @@ switch ($action) {
 	case 'updateCard':
 		updateCard($products, $tax);
 		header('location: /');
+		break;
+	case 'updateCardCheckout':
+		updateCard($products, $tax);
+		header('location: /carrinho');
 		break;
 	default:
 		http_response_code(404);

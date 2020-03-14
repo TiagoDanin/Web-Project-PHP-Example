@@ -8,7 +8,7 @@
 <form action="controller/shopping.php" method="get">
 	<input type="hidden" name="action" value="updateCard" />
 
-	<div class="card-deck mb-3 text-center row">
+	<div class="text-center row row-cols-sm-3 justify-content-md-center align-items-start">
 		<?php
 
 		foreach ($products as $product) {
@@ -18,15 +18,17 @@
 			}
 
 			echo '
-				<div class="card mb-4 shadow-sm col">
-					<div class="card-header">
-						<h4 class="font-weight-normal">' . $product->name . '</h4>
-					</div>
-					<div class="card-body">
-						<h1 class="card-title pricing-card-title">R$ ' . $product->price . '*<small class="text-muted">/ mês</small>
-						</h1>
-						<ul class="list-unstyled mt-3 mb-4">' . $list . '</ul>
-						<button type="submit" class="btn btn-lg btn-block btn-outline-primary" type="submit" value="p' . $product->id . '" name="product" id="p' . $product->name . '">' . (isset($_SESSION['p' . $product->id]) && $_SESSION['p' . $product->id] ? 'Cancelar assinatura' : 'Assinar') . '</button>
+				<div class="col">
+					<div class="card mb-4 shadow-sm">
+						<div class="card-header">
+							<h4 class="font-weight-normal">' . $product->name . '</h4>
+						</div>
+						<div class="card-body">
+							<h1 class="card-title pricing-card-title">R$ ' . $product->price . '*<small class="text-muted">/ mês</small>
+							</h1>
+							<ul class="list-unstyled mt-3 mb-4">' . $list . '</ul>
+							<button type="submit" class="btn btn-lg btn-block btn-outline-primary" type="submit" value="p' . $product->id . '" name="product" id="p' . $product->name . '">' . (isset($_SESSION['p' . $product->id]) && $_SESSION['p' . $product->id] ? 'Cancelar assinatura' : 'Assinar') . '</button>
+						</div>
 					</div>
 				</div>
 			';
