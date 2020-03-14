@@ -1,3 +1,8 @@
+<?php
+	session_start();
+	require_once('database/products.php');
+?>
+
 <!doctype html>
 <html>
 
@@ -11,27 +16,28 @@
 </head>
 
 <body>
+
 	<body>
-		<?php require '../views/menu.php' ?>
+		<?php require 'views/menu.php' ?>
 		<div class="container">
 			<?php
 				$request = $_SERVER['REQUEST_URI'];
 				switch ($request) {
 					case '/carrinho' :
-						require '../views/index.php';
+						require 'views/card.php';
 						break;
 					case '':
 					case '/':
-						require '../views/produtos.php';
+						require 'views/products.php';
 						break;
 					default:
 						http_response_code(404);
-						require '../views/404.php';
+						require 'views/404.php';
 						break;
 				}
 			?>
 
-			<?php require '../views/footer.php' ?>
+			<?php require 'views/footer.php' ?>
 
 	</body>
 
