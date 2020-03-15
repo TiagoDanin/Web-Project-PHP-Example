@@ -1,7 +1,8 @@
 <div class="row">
-	<div class="col-12">
-		<div class="table-responsive">
-			<form action="controller/shopping.php" method="get">
+	<form action="controller/shopping.php" method="get" class="col-12">
+		<div class="col-12">
+			<div class="table-responsive">
+
 				<input type="hidden" name="action" value="updateCardCheckout" />
 				<table class="table table-striped">
 					<thead>
@@ -29,31 +30,35 @@
 						<tr>
 							<td></td>
 							<td>Sub-Total</td>
-							<td class="text-right"><?php echo $total > 0 ? ($total - $tax) : 0 ?></td>
+							<td class="text-right">R$ <?php echo $total > 0 ? ($total - $tax) : 0 ?></td>
 						</tr>
 						<tr>
 							<td></td>
 							<td>Taxa de atualização</td>
-							<td class="text-right"><?php echo$total > 0 ? $tax : 0 ?></td>
+							<td class="text-right">R$ <?php echo$total > 0 ? $tax : 0 ?></td>
 						</tr>
 						<tr>
 							<td></td>
 							<td><strong>Total</strong></td>
-							<td class="text-right"><strong><?php echo $total ?></strong></td>
+							<td class="text-right"><strong>R$ <?php echo $total ?></strong></td>
 						</tr>
 					</tbody>
 				</table>
-			</form>
-		</div>
-	</div>
-	<div class="col mb-2">
-		<div class="row">
-			<div class="col-sm-12  col-md-6">
-				<a class="btn btn-block btn-light" href="/">Continuar comprando</a>
-			</div>
-			<div class="col-sm-12 col-md-6 text-right">
-				<button class="btn btn-lg btn-block btn-success text-uppercase">Finalizar</button>
 			</div>
 		</div>
-	</div>
+		<div class="col mb-2">
+			<div class="row">
+				<div class="col-sm-12  col-md-6">
+					<a class="btn btn-lg btn-block btn-light text-uppercase" href="/">Continuar comprando</a>
+				</div>
+				<div class="col-sm-12 col-md-6 text-right">
+					<?php
+					if ($total > 0) {
+						echo '<button type="submit" class="btn btn-lg btn-block btn-success text-uppercase" name="action" value="checkout">Finalizar</button>';
+					}
+				?>
+				</div>
+			</div>
+		</div>
+	</form>
 </div>

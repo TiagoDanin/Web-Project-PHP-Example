@@ -1,37 +1,25 @@
 <?php
 session_start();
 require_once('../database/products.php');
+require_once(__DIR__ . '/../model/card.php');
 
-function updateTotal($products, $tax) {
-	$total = $tax;
-	foreach ($products as $product) {
-		if (isset($_SESSION['p' . $product->id]) && $_SESSION['p' . $product->id]) {
-			$total += $product->price;
-		}
-	}
-
-	if ($total == $tax) {
-		$total = 0;
-	}
-	
-	$_SESSION['total'] = $total;
-}
-
-function updateCard($products, $tax) {
-	$productId = $_REQUEST['product'];
-	$_SESSION[$productId] = !$_SESSION[$productId];
-	updateTotal($products, $tax);
-}
-
+$card = new Card($tax, $products);
 $action = $_REQUEST['action'];
 switch ($action) {
 	case 'updateCard':
-		updateCard($products, $tax);
-		header('location: /');
+		$card->updateCard($_REQUEST['product']);
+		header('location: /produtos');
 		break;
 	case 'updateCardCheckout':
-		updateCard($products, $tax);
+		$card->updateCard($_REQUEST['product']);
 		header('location: /carrinho');
+		break;
+	case 'checkout':
+		header('location: /finalizar');
+		break;
+	case 'done':
+		$card->clear();
+		header('location: /pronto?code='.$card->code().'');
 		break;
 	default:
 		http_response_code(404);
