@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!isset($_SESSION)) {
+	session_start();
+}
 require_once('../database/products.php');
 require_once(__DIR__ . '/../model/card.php');
 

@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!isset($_SESSION)) {
+	session_start();
+}
 
 class Card {
 	private $tax;
@@ -26,6 +28,10 @@ class Card {
 	}
 	
 	public function updateCard($productId) {
+		if (!isset($_SESSION[$productId])) {
+			$_SESSION[$productId] = false;
+		}
+
 		$_SESSION[$productId] = !$_SESSION[$productId];
 		$this->updateTotal();
 	}

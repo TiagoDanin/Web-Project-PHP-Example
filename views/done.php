@@ -1,6 +1,6 @@
 <div class="jumbotron text-center">
 	<h1 class="display-3">Obrigado!</h1>
-	<p class="lead"><strong>Seu login de acesso ao painel do Cliente da MoboHile foi enviado via email.</strong> Estamos
+	<p class="lead"><strong>Seu login de acesso ao painel do Cliente da MeboHile foi enviado via email.</strong> Estamos
 		felizes de oferecer o melhor serviço para nossos clientes.</p>
 	<hr>
 	<p>

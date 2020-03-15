@@ -36,7 +36,7 @@
 			?>
 			<li class="list-group-item d-flex justify-content-between lh-condensed">
 				<div>
-					<h6 class="my-0">Taxa de atualização</h6>
+					<h6 class="my-0">Taxa de instalação</h6>
 				</div>
 				<span class="text-muted">R$ <?php echo $tax ?></span>
 			</li>

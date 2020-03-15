@@ -3,7 +3,7 @@
 		<div class="col-6 col-md">
 			<h5>Sobre</h5>
 			<p class="text-small">
-				Criado por Tiago Danin & Eduardo
+				Criado por Tiago Danin & Eduardo Mouta
 			</p>
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic officia molestias voluptatem
@@ -22,6 +22,6 @@
 		</div>
 	</div>
 	<div class="col-12 col-md">
-		<small class="d-block mb-3 text-muted text-right">Mobe &copy; 2020</small>
+		<small class="d-block mb-3 text-muted text-right">MeboHile &copy; 2020</small>
 	</div>
 </footer>

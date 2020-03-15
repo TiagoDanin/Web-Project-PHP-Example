@@ -29,13 +29,13 @@
 
 						<tr>
 							<td></td>
-							<td>Sub-Total</td>
-							<td class="text-right">R$ <?php echo $total > 0 ? ($total - $tax) : 0 ?></td>
+							<td>Taxa de instalação</td>
+							<td class="text-right">R$ <?php echo$total > 0 ? $tax : 0 ?></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td>Taxa de atualização</td>
-							<td class="text-right">R$ <?php echo$total > 0 ? $tax : 0 ?></td>
+							<td>Sub-Total</td>
+							<td class="text-right">R$ <?php echo $total > 0 ? ($total - $tax) : 0 ?></td>
 						</tr>
 						<tr>
 							<td></td>
