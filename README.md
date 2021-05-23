@@ -1,2 +1,2 @@
-# Web Project PHP Exemple
-Web Project PHP Exemple
+# Web Project PHP Example
+Web Project PHP Example
